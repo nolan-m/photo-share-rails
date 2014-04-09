@@ -1,10 +1,15 @@
 <h1> Hello World </h1>
-<ul>
+<ul class="list-unstyled">
 
 
 <% current_user.pictures.each do |picture| %>
 
-<li><%= image_tag picture.photo(:medium) %></li>
+<li class="photos"><%= link_to image_tag(picture.photo.url(:medium)), picture_path(picture) %></li>
+
+
+
 
 <% end %>
 </ul>
+
+

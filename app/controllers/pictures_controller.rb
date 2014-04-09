@@ -14,6 +14,10 @@ class PicturesController < ApplicationController
     @picture = Picture.new
   end
 
+  def show
+    @picture = Picture.find(params[:id])
+  end
+
 private
 
   def picture_params

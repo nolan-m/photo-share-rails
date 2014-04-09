@@ -1,0 +1,12 @@
+<figure>
+<%= image_tag @picture.photo(:medium) %>
+<figcaption> <%= @picture.caption %> </figcaption>
+</figure>
+
+<jumbotron>
+   <%= link_to "Delete Pic", picture_path(@picture),
+                                            :confirm => "You Sure?",
+                                            :method => "delete",
+                                            :class => "btn btn-danger" %>
+</jumbotron>
+
