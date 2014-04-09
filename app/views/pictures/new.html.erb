@@ -1,0 +1,20 @@
+<h1>Upload a new picture!</h1>
+<br />
+<br />
+
+
+<%= form_for @picture, :url => pictures_path, :html => { :multipart => true } do |form| %>
+  <%= form.label :photo, "Click the button to choose a picture to upload:" %>
+  <%= form.file_field :photo %>
+
+  <%= form.label :caption, "Enter a caption for your pic:" %>
+  <%= form.text_field :caption %>
+
+  <%= form.hidden_field :user_id, :value => session[:user_id] %>
+  <%= form.submit(:class => "btn btn-primary") %>
+<% end %>
+
+
+
+
+

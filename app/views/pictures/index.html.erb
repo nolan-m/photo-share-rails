@@ -1,0 +1,10 @@
+<h1> Hello World </h1>
+<ul>
+
+
+<% current_user.pictures.each do |picture| %>
+
+<li><%= image_tag picture.photo(:medium) %></li>
+
+<% end %>
+</ul>
