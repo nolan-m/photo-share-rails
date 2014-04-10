@@ -28,3 +28,31 @@
                                             :class => "btn btn-danger" %>
 </jumbotron>
 
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <div class="container-fluid">
+
+    <div class="navbar-footer">
+ <br />
+
+  &nbsp;
+  &nbsp;
+  <%= link_to "View My Library", pictures_path %>
+  &nbsp;
+  &nbsp;
+  <%= link_to "Upload Photo", new_picture_path %>
+<div class="rightSideNav">
+  &nbsp;
+  &nbsp;
+  <%= link_to "Previous Photo", picture_path(@picture.find_previous(current_user)) %>
+
+  &nbsp;
+  &nbsp;
+
+  <%= link_to "Next Photo", picture_path(@picture.find_next(current_user)) %>
+</div>
+
+  </div>
+</div>
+</nav>
+
+

@@ -19,3 +19,7 @@ li.photos {
   width: 85%;
   text-align: center;
 }
+
+.rightSideNav {
+  float: right;
+}

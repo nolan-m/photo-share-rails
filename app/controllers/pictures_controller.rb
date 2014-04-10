@@ -19,6 +19,9 @@ class PicturesController < ApplicationController
 
   def new
     @picture = Picture.new
+    if current_user == nil
+      redirect_to root_url, notice: "Please sign in"
+    end
   end
 
   def show
