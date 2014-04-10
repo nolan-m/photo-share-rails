@@ -11,7 +11,7 @@ gem 'factory_girl'
 gem 'capybara'
 gem 'paperclip', '~> 4.1'
 gem 'bootstrap-sass'
-gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt'
 
 
 group :development do

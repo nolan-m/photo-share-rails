@@ -5,11 +5,19 @@
 <jumbotron>
 
 <%= form_for @tag, :url => tags_path, method: :post, :html => { :multipart => true } do |form| %>
-<%= hidden_field_tag "tag[user_ids][]", nil %>
 <%= hidden_field_tag "tag[picture_id]", @picture.id %>
-<%= form.collection_check_boxes :tag, :user_ids[], User.all, :id, :name %>
+<%= hidden_field_tag "tag[user_ids][]", nil %>
+
+<% User.all.each do |user| %>
+  <%= check_box_tag "tag[user_ids][]", user.id, @picture.users.include?(user) %>
+  <%= user.name %><br/>
+<% end %>
+
+
 <%= form.submit(:class => "btn btn-primary") %>
 <% end %>
+
+
 
 <br />
 

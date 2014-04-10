@@ -1,6 +1,8 @@
 class Picture < ActiveRecord::Base
   belongs_to :user
   has_many :tags
+  has_many :users, :through => :tags
+
   has_attached_file :photo, :styles => { :thumb => ["32x32#", :jpg], :medium => ["300x300#", :jpg] }
 
   validates_attachment :photo, :presence => true,
