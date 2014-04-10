@@ -23,3 +23,11 @@ li.photos {
 .rightSideNav {
   float: right;
 }
+
+ul.big {
+  font-size: 250%;
+}
+
+.users {
+  font-weight: bold;
+}

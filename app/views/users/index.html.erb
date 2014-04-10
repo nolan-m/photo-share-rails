@@ -1,0 +1,12 @@
+<h1>Select a user to see </h1>
+
+<div class="well">
+<ul class="list-unstyled big">
+
+  <% User.all.each do |user| %>
+  <li><strong><%= user.user_name %></strong>:&nbsp; <%= user.name %></li>
+  <% end %>
+
+</ul>
+</div>
+<%= render('/pictures/nav') %>

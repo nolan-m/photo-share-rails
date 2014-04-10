@@ -7,12 +7,12 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'factory_girl'
+gem 'factory_girl_rails'
 gem 'capybara'
 gem 'paperclip', '~> 4.1'
 gem 'bootstrap-sass'
 gem 'bcrypt'
-
+gem 'launchy'
 
 group :development do
   gem 'better_errors'
