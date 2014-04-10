@@ -13,7 +13,11 @@
   &nbsp;
   &nbsp;
   <%= link_to "Upload Photo", new_picture_path %>
-
+   &nbsp;
+  &nbsp;
+  <% if current_user != nil %>
+    <%= link_to "View Profile", user_path(current_user) %>
+  <% end %>
 
 
   </div>

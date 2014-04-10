@@ -1,1 +1,12 @@
-<%= @user.name %>
+<h1><%= @user.name %></h1>
+<h4>Your tagged pictures:</h4>
+
+<%= render("pictures/nav") %>
+
+<div class="well">
+  <ul class="list-unstyled">
+    <% @user.tagged_pictures.each do |pic| %>
+      <li><%= image_tag pic.photo(:medium) %></li>
+    <% end %>
+  </ul>
+</div>
