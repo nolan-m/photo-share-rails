@@ -2,8 +2,18 @@
 <%= image_tag @picture.photo(:medium) %>
 <figcaption> <%= @picture.caption %> </figcaption>
 </figure>
-
 <jumbotron>
+
+<%= form_for @tag, :url => tags_path, method: :post, :html => { :multipart => true } do |form| %>
+<%= hidden_field_tag "tag[user_ids][]", nil %>
+<%= hidden_field_tag "tag[picture_id]", @picture.id %>
+<%= form.collection_check_boxes :tag, :user_ids[], User.all, :id, :name %>
+<%= form.submit(:class => "btn btn-primary") %>
+<% end %>
+
+<br />
+
+
    <%= link_to "Delete Pic", picture_path(@picture),
                                             :confirm => "You Sure?",
                                             :method => "delete",

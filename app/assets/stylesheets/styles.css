@@ -4,6 +4,7 @@
 
 .container {
   margin-top: 33px;
+  padding-bottom: 50px;
 }
 
 .the_flash {
@@ -12,4 +13,9 @@
 
 li.photos {
   display: inline;
+
+}
+.well {
+  width: 85%;
+  text-align: center;
 }

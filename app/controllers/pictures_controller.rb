@@ -1,5 +1,12 @@
 class PicturesController < ApplicationController
-  before_filter :authorize, only: [:create]
+  before_filter :authorize, only: [:create, :destroy]
+  def index
+    if current_user == nil
+      redirect_to root_url, notice: "Please sign in"
+    else
+      render 'index'
+    end
+  end
 
   def create
     @picture = Picture.new(picture_params)
@@ -15,7 +22,14 @@ class PicturesController < ApplicationController
   end
 
   def show
+    @tag = Tag.new
     @picture = Picture.find(params[:id])
+  end
+
+  def destroy
+    @picture = Picture.find(params[:id])
+    @picture.delete
+    redirect_to("/pictures")
   end
 
 private
