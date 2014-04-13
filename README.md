@@ -1,5 +1,7 @@
 # Photo Sharing App
 
+New concepts:  User accounts. Paperclip gem.
+
 Users can create accounts.
 
 Users can upload pictures with a caption. 
